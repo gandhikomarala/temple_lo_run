@@ -17,6 +17,12 @@ jobs:
       - name: Scan for Private Keys and Exposed Credentials
         run: |
           echo "[*] Scanning repository for exposed credentials..."
-          ! grep -r "BEGIN RSA PRIVATE KEY" . --exclude-dir=.git || exit 1
-          ! grep -r "BEGIN OPENSSH PRIVATE KEY" . --exclude-dir=.git || exit 1
+          if grep -rn "BEGIN RSA PRIVATE KEY" . --exclude-dir=.git; then
+            echo "ERROR: Private key detected!"
+            exit 1
+          fi
+          if grep -rn "BEGIN OPENSSH PRIVATE KEY" . --exclude-dir=.git; then
+            echo "ERROR: OpenSSH key detected!"
+            exit 1
+          fi
           echo "[*] Security audit passed with zero credential leaks."
