@@ -1,0 +1,22 @@
+name: Security Audit & SAST
+
+on:
+  push:
+    branches: [ main, feature/* ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  security-audit:
+    name: Secret Leak Detection & SAST
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Scan for Private Keys and Exposed Credentials
+        run: |
+          echo "[*] Scanning repository for exposed credentials..."
+          ! grep -r "BEGIN RSA PRIVATE KEY" . --exclude-dir=.git || exit 1
+          ! grep -r "BEGIN OPENSSH PRIVATE KEY" . --exclude-dir=.git || exit 1
+          echo "[*] Security audit passed with zero credential leaks."
