@@ -17,7 +17,7 @@ Temple Quest 3D — Endless Procedural Aztec Runner is a production-grade enterp
 
 ### 1. Set Up Python Virtual Environment
 ```bash
-git clone gandhikomarala/temple_lo_run.git
+git clone git@github.com:gandhikomarala/temple_lo_run.git
 cd temple_lo_run
 python -m venv venv
 # Windows:
