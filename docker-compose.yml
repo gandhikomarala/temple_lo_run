@@ -1,29 +1,8 @@
 version: '3.8'
-
 services:
-  backend:
-    build:
-      context: ./Backend
-      dockerfile: Dockerfile
+  web:
+    build: .
     ports:
       - "8000:8000"
     environment:
-      - DATABASE_URL=postgresql://relic_user:relic_pass@db:5432/relic_run
-      - JWT_SECRET=relic_run_secret_key_production_grade
-      - NVIDIA_API_KEY=${NVIDIA_API_KEY:-placeholder}
-    depends_on:
-      - db
-
-  db:
-    image: postgres:15-alpine
-    environment:
-      - POSTGRES_USER=relic_user
-      - POSTGRES_PASSWORD=relic_pass
-      - POSTGRES_DB=relic_run
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
+      - ENVIRONMENT=production
