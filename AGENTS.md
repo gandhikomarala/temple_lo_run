@@ -1,9 +1,8 @@
-# Project Relic Run — Engineering & Agent Rules
+# AGENTS.md — Temple Quest 3D — Aztec Ruins Endless Runner
 
-## Core Principles
-1. **Inspect Before Modifying**: Never modify code or configuration without inspecting the active state.
-2. **Modular Architecture**: Separate concerns between Gameplay, Input, Procedural Generation, Physics, UI, Audio, Persistence, and Backend.
-3. **Verified Results**: Never claim test results without running the automated test suites.
-4. **Zero Leaked Secrets**: Never commit private keys, JWT secrets, database credentials, or NVIDIA API keys.
-5. **No MIT License Badges**: Do not include MIT license badges or standalone LICENSE files.
-6. **TrainPlex Compliance**: Maintain clean commit histories, active pull requests, 100% green CI/CD pipelines, and standalone runnable demo runners.
+## Core Directives
+1. **Preserve Domain Identity**: Maintain the authentic Game workflow and design aesthetics (Aztec Gold & Emerald Jungle).
+2. **Real Functionality**: All buttons, inputs, calculations, and simulations must perform real deterministic actions.
+3. **No Fake Metrics**: Zero artificial "50k/100k LOC" or synthetic placeholder text.
+4. **Zero MIT License Badges**: Do not include MIT license badges in README or root.
+5. **Quality Verification**: Verify all unit tests and builds before publishing.

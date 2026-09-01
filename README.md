@@ -1,40 +1,18 @@
-# Relic Run — Enterprise Endless Runner & Game Platform
+# Temple Quest 3D — Aztec Ruins Endless Runner
 
-Relic Run is an original, high-fidelity third-person endless running adventure game and distributed backend service platform.
+Endless runner through ancient Mesoamerican temples featuring procedural obstacle spawning, physics-based jump/slide mechanics, power-up multipliers, dynamic particle effects, and persistent high scores.
 
----
+## Product Highlights
+- **Domain**: Game
+- **Visual Theme**: Aztec Gold & Emerald Jungle
+- **State Persistence**: Browser localStorage & FastAPI microservices
+- **Zero-Dependency Web Client**: Works seamlessly on GitHub Pages
 
-## 🌟 Architecture Overview
-
-```
-RelicRun/
-├── UnityClient/            # Unity C# Client Architecture
-│   └── Assets/Scripts/     # Core, Player, World, Obstacles, PowerUps, AI Chaser, UI, Networking
-├── Backend/                # Python FastAPI Distributed Backend Services
-│   ├── app/                # API Endpoints, Models, Repositories, Analytics, NVIDIA Gateway
-│   └── tests/              # Pytest automated test matrix
-├── Infrastructure/         # Docker Compose, PostgreSQL configurations
-├── docs/                   # Architecture, Game Design, API & Deployment Specifications
-├── scripts/                # Standalone demo runner & diagnostic probes
-└── index.html              # Standalone 3D WebGL Playable Edition
-```
-
----
-
-## 🚀 Quick Start
-
-### 1. Run the Standalone Game Probe
+## Architecture & Quick Start
 ```bash
-python scripts/demo_run.py
-```
+# Run Tests
+pytest tests/
 
-### 2. Play the 3D Web Game
-Open `index.html` directly in your browser or serve with:
-```bash
-python -m http.server 8000
-```
-
-### 3. Run Backend Test Matrix
-```bash
-pytest Backend/tests/ -v
+# Docker Deployment
+docker-compose up -d --build
 ```
